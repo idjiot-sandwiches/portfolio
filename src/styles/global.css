@@ -131,7 +131,7 @@ body {
 #root {
   position: relative;
   min-height: 100vh;
-  background-color: #cad5e2 !important;
+  background-color: #FFDEE6 !important;
   background:
     linear-gradient(to right, #ff91a4 1px, transparent 1px),
     linear-gradient(to bottom, #ff91a4 1px, transparent 1px),
