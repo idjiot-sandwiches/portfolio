@@ -1,9 +1,19 @@
 ---
-import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 ---
 
 <Card class="order-2 row-span-2">
   <CardHeader>
     <CardTitle>Backend</CardTitle>
   </CardHeader>
+  <CardContent class="space-x-1 space-y-1">
+    <Badge variant="outline">.NET Framework</Badge>
+    <Badge variant="outline">C#</Badge>
+    <Badge variant="outline">Laravel</Badge>
+    <Badge variant="outline">PHP</Badge>
+    <Badge variant="outline">MySQL</Badge>
+    <Badge variant="outline">MariaDB</Badge>
+    <Badge variant="outline">SQL Server</Badge>
+  </CardContent>
 </Card>
