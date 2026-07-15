@@ -18,9 +18,9 @@ const yourTime = parseTime(date.toLocaleTimeString('en-GB'));
 <Card class="row-span-2">
   <CardContent class="h-full">
     <div class="flex justify-between items-center h-11/12">
-      <div class="w-1/2 flex flex-col items-center h-full">
+      <div class="w-1/2 flex flex-col items-center gap-2 h-full">
         <p class="uppercase tracking-widest text-xs">My Time</p>
-        <div class="flex flex-col items-center justify-center h-full gap-2">
+        <div class="flex flex-col items-center h-full gap-2">
           <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
             {myTime.hour}
           </h2>
@@ -30,9 +30,9 @@ const yourTime = parseTime(date.toLocaleTimeString('en-GB'));
         </div>
       </div>
       <Separator orientation="vertical" />
-      <div class="w-1/2 flex flex-col items-center h-full">
+      <div class="w-1/2 flex flex-col items-center gap-2 h-full">
         <p class="uppercase tracking-widest text-xs">Your Time</p>
-        <div class="flex flex-col items-center justify-center h-full gap-2">
+        <div class="flex flex-col items-center h-full gap-2">
           <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
             {yourTime.hour}
           </h2>
