@@ -2,11 +2,15 @@
 import { Card, CardContent, CardHeader, CardRedirect, CardTitle } from "../ui/card";
 ---
 
-<Card class="col-span-3 row-span-4">
+<Card class="
+  order-1 row-span-5 bg-[url(/frieren.png)] bg-no-repeat bg-size-[150px_auto] bg-position-[right_5%_bottom_-80%]
+  md:order-1 md:col-span-3 md:row-span-4 
+  lg:bg-position-[right_10%_bottom_-50%]"
+>
   <CardHeader>
     <CardTitle>Hello!</CardTitle>
   </CardHeader>
-  <CardContent class="grid grid-cols-3">
+  <CardContent class="grid md:grid-cols-3">
     <div class="col-span-2 space-y-6 text-base">
       <p class="leading-5 [&:not(:first-child)]:mt-6">
         Hi there! I'm <span class="font-semibold">Vincen</span>. I recently graduated with a degree in Computer Science and a minor in Artificial Intelligence.
@@ -41,9 +45,6 @@ import { Card, CardContent, CardHeader, CardRedirect, CardTitle } from "../ui/ca
           </svg>
         </CardRedirect>
       </div>
-    </div>
-    <div>
-      <img src="/frieren.png" alt="" class="w-full h-3/4 object-cover object-top">
     </div>
   </CardContent>
 </Card>
