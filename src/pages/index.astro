@@ -10,14 +10,18 @@ import Current from "@/components/grid/Current.astro";
 import PowerButton from "@/components/grid/PowerButton.astro";
 import Time from "@/components/grid/Time.astro";
 import Summary from "@/components/grid/Summary.astro";
-import AboutMe from "@/components/grid/AboutMe.astro";
+import Backend from "@/components/grid/Backend.astro";
+import Frontend from "@/components/grid/Frontend.astro";
+import Tools from "@/components/grid/Tools.astro";
 ---
 
 <Layout>
   <main class="mx-auto flex lg:h-screen w-full max-w-6xl flex-1 flex-col gap-4 rounded-xl">
     <div class="grid grid-cols-1 auto-rows-25 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-8 lg:auto-rows-auto gap-4 h-full p-4">
       <Summary />
-      <AboutMe />
+      <Backend />
+      <Frontend />
+      <Tools />
       <Resume />
       <Time />
       <Experience />
