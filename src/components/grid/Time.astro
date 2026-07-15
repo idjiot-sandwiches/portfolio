@@ -1,5 +1,49 @@
 ---
-import { Card } from "../ui/card";
+import { Card, CardContent } from "../ui/card";
+import { Separator } from "../ui/separator";
+
+const date = new Date();
+const parseTime = (str: string) => {
+  const time = str.split(':');
+  return {
+    hour: time[0],
+    minute: time[1]
+  }
+};
+
+const myTime = parseTime(date.toLocaleTimeString('en-GB', { timeZone: 'Asia/Jakarta' }));
+const yourTime = parseTime(date.toLocaleTimeString('en-GB'));
 ---
 
-<Card class="row-span-2">time</Card>
+<Card class="row-span-2">
+  <CardContent class="h-full">
+    <div class="flex justify-between items-center h-11/12">
+      <div class="w-1/2 flex flex-col items-center h-full">
+        <p class="uppercase tracking-widest text-xs">My Time</p>
+        <div class="flex flex-col items-center justify-center h-full gap-2">
+          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
+            {myTime.hour}
+          </h2>
+          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
+            {myTime.minute}
+          </h2>
+        </div>
+      </div>
+      <Separator orientation="vertical" />
+      <div class="w-1/2 flex flex-col items-center h-full">
+        <p class="uppercase tracking-widest text-xs">Your Time</p>
+        <div class="flex flex-col items-center justify-center h-full gap-2">
+          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
+            {yourTime.hour}
+          </h2>
+          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
+            {yourTime.minute}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-muted-foreground text-center">
+      GMT+7 Asia/Jakarta HH:mm format
+    </p>
+  </CardContent>
+</Card>
