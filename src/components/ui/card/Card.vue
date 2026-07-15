@@ -18,7 +18,6 @@ const props = defineProps<{
         'shadow-[4px_4px_0px_0px_var(--card),8px_8px_0px_0px_var(--card-foreground)]',
         'hover:ring-[#FF91A4] hover:shadow-[4px_4px_0px_0px_var(--card),8px_8px_0px_0px_#FF91A4] transition duration-200 ease-in-out',
         'hover:bg-[radial-gradient(circle_at_center,#FFD3DA_1.5px,transparent_1.5px),radial-gradient(circle_at_center,#FFD3DA_1.5px,transparent_1.5px)]',
-        'hover:[background-size:10px_10px] hover:[background-position:0_0,5px_5px] hover:animate-[scroll-diagonal_4s_linear_infinite]',
         props.class,
       )
     "

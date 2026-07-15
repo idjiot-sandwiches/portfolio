@@ -1,46 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { ExternalLink, Copyright } from '@lucide/astro';
-import { Card, CardContent, CardHeader, CardTitle, CardRedirect } from '@/components/ui/card';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Resume from "@/components/grid/Resume.astro";
+import Contact from "@/components/grid/Contact.astro";
+import Project from "@/components/grid/Project.astro";
+import Experience from "@/components/grid/Experience.astro";
+import Certificate from "@/components/grid/Certificate.astro";
+import Copyright from "@/components/grid/Copyright.astro";
+import Current from "@/components/grid/Current.astro";
+import PowerButton from "@/components/grid/PowerButton.astro";
+import Time from "@/components/grid/Time.astro";
+import Summary from "@/components/grid/Summary.astro";
+import AboutMe from "@/components/grid/AboutMe.astro";
 ---
 
 <Layout>
-	<main class="mx-auto flex h-screen w-full max-w-7xl flex-1 flex-col gap-4 rounded-xl antialiased">
-		<div class="grid grid-cols-4 grid-rows-8 gap-4 h-full py-8">
-			<Card class="col-span-3 row-span-4">
-				<CardHeader>
-					<CardTitle>
-						quick summary
-					</CardTitle>
-				</CardHeader>
-			</Card>
-			<Card class="row-span-6">About me</Card>
-			<CardRedirect 
-				class="row-span-1 justify-center" 
-				href='https://drive.google.com/file/d/1q2O7pXpjXqqNTQeW41Or-5GHhFE7zImC/view?usp=drive_link' 
-				target="_blank"
-			>
-				<CardContent>
-					<div class="scroll-m-20 text-xl font-semibold tracking-tight flex items-center justify-between">
-						Resume <ExternalLink />
-					</div>
-				</CardContent>
-			</CardRedirect>
-			<Card class="row-span-2">time</Card>
-			<Card class="row-span-1">experience</Card>
-			<Card class="row-span-3">contact</Card>
-			<Card class="row-span-1">current job (no job) lol</Card>
-			<Card class="row-span-1">project</Card>
-			<Card class="row-span-2">powerbtn</Card>
-			<Card class="row-span-2">
-				<CardContent>
-					<Copyright />
-				</CardContent>
-			</Card>
-			<Card class="row-span-1">certs</Card>
-		</div>
-	</main>
+  <main class="mx-auto flex h-screen w-full max-w-7xl flex-1 flex-col gap-4 rounded-xl py-8">
+    <div class="grid grid-cols-4 grid-rows-8 gap-4 h-full">
+      <Summary />
+      <AboutMe />
+      <Resume />
+      <Time />
+      <Experience />
+      <Contact />
+      <Current />
+      <Project />
+      <PowerButton />
+      <Copyright />
+      <Certificate />
+    </div>
+  </main>
 </Layout>
