@@ -3,6 +3,39 @@ import Layout from "@/layouts/Layout.astro";
 import { ExternalLink } from "@lucide/astro";
 import { BackButton } from "@/components/ui/button";
 import { CardAction, CardDescription, CardHeader, CardRedirect, CardTitle } from "@/components/ui/card";
+
+const certs = [
+  {
+    title: 'Building Transformer-Based Natural Language Processing Applications',
+    issuer: 'NVIDIA Deep Learning Institute',
+    link: 'https://learn.nvidia.com/certificates?id=eC1lpJv9Q-GuvHkLzpMGtg'
+  },
+  {
+    title: 'Foundational C# with Microsoft',
+    issuer: 'freeCodeCamp',
+    link: 'https://www.freecodecamp.org/certification/fcc17be0db4-7c4a-4afd-9f7d-e3103ee2de44/foundational-c-sharp-with-microsoft'
+  },
+  {
+    title: 'C# (Basic)',
+    issuer: 'HackerRank',
+    link: 'https://www.hackerrank.com/certificates/iframe/db398b339b6e'
+  },
+  {
+    title: 'SQL (Basic)',
+    issuer: 'HackerRank',
+    link: 'https://www.hackerrank.com/certificates/iframe/db398b339b6e'
+  },
+  {
+    title: 'SQL (Intermediate)',
+    issuer: 'HackerRank',
+    link: 'https://www.hackerrank.com/certificates/iframe/d29d9a38906c'
+  },
+  {
+    title: 'SQL (Advanced)',
+    issuer: 'HackerRank',
+    link: 'https://www.hackerrank.com/certificates/iframe/8aa89fb5ccc2'
+  },
+]
 ---
 
 <Layout>
@@ -11,97 +44,16 @@ import { CardAction, CardDescription, CardHeader, CardRedirect, CardTitle } from
     <h2 class="scroll-m-20 pt-4 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
       Certificates
     </h2>
-    <div class="grid md:grid-cols-2 gap-4">
-      <CardRedirect 
-        href="https://learn.nvidia.com/certificates?id=eC1lpJv9Q-GuvHkLzpMGtg" 
-        target="_blank"
-        class="min-h-32"
-      >
-        <CardHeader>
-          <CardTitle>
-            Building Transformer-Based Natural Language Processing Applications
-          </CardTitle>
-          <CardDescription>
-            NVIDIA Deep Learning Institute
-          </CardDescription>
-          <CardAction><ExternalLink /></CardAction>
-        </CardHeader>
-      </CardRedirect>
-      <CardRedirect 
-        href="https://www.freecodecamp.org/certification/fcc17be0db4-7c4a-4afd-9f7d-e3103ee2de44/foundational-c-sharp-with-microsoft" 
-        target="_blank"
-        class="min-h-32"
-      >
-        <CardHeader>
-          <CardTitle>
-            Foundational C# with Microsoft
-          </CardTitle>
-          <CardDescription>
-            freeCodeCamp
-          </CardDescription>
-          <CardAction><ExternalLink /></CardAction>
-        </CardHeader>
-      </CardRedirect>
-      <CardRedirect 
-        href="https://www.hackerrank.com/certificates/iframe/db398b339b6e" 
-        target="_blank"
-        class="min-h-32"
-      >
-        <CardHeader>
-          <CardTitle>
-            C# (Basic)
-          </CardTitle>
-          <CardDescription>
-            HackerRank
-          </CardDescription>
-          <CardAction><ExternalLink /></CardAction>
-        </CardHeader>
-      </CardRedirect>
-      <CardRedirect 
-        href="https://www.hackerrank.com/certificates/iframe/db398b339b6e" 
-        target="_blank"
-        class="min-h-32"
-      >
-        <CardHeader>
-          <CardTitle>
-            SQL (Basic)
-          </CardTitle>
-          <CardDescription>
-            HackerRank
-          </CardDescription>
-          <CardAction><ExternalLink /></CardAction>
-        </CardHeader>
-      </CardRedirect>
-      <CardRedirect 
-        href="https://www.hackerrank.com/certificates/iframe/d29d9a38906c" 
-        target="_blank"
-        class="min-h-32"
-      >
-        <CardHeader>
-          <CardTitle>
-            SQL (Intermediate)
-          </CardTitle>
-          <CardDescription>
-            HackerRank
-          </CardDescription>
-          <CardAction><ExternalLink /></CardAction>
-        </CardHeader>
-      </CardRedirect>
-      <CardRedirect 
-        href="https://www.hackerrank.com/certificates/iframe/8aa89fb5ccc2" 
-        target="_blank"
-        class="min-h-32"
-      >
-        <CardHeader>
-          <CardTitle>
-            SQL (Advanced)
-          </CardTitle>
-          <CardDescription>
-            HackerRank
-          </CardDescription>
-          <CardAction><ExternalLink /></CardAction>
-        </CardHeader>
-      </CardRedirect>
+    <div class="grid md:grid-cols-2 gap-6">
+      {certs.map(c => (
+        <CardRedirect href={c.link} target="_blank" class="min-h-32">
+          <CardHeader>
+            <CardTitle>{c.title}</CardTitle>
+            <CardDescription>{c.issuer}</CardDescription>
+            <CardAction><ExternalLink /></CardAction>
+          </CardHeader>
+        </CardRedirect>
+      ))}
     </div>
   </main>
 </Layout>
