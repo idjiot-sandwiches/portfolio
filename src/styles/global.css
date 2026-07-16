@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -119,44 +120,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  position: relative;
-  min-height: 100vh;
-  background-color: #FFDEE6 !important;
-  background:
-    linear-gradient(to right, #ff91a4 1px, transparent 1px),
-    linear-gradient(to bottom, #ff91a4 1px, transparent 1px),
-    radial-gradient(circle at 0px 0px, #ff91a4 3px, transparent 1px),
-    radial-gradient(circle at 100px 100px, #ff91a4 3px, transparent 1px),
-    radial-gradient(circle at 100px 0px, #ff91a4 3px, transparent 1px),
-    radial-gradient(circle at 0px 100px, #ff91a4 3px, transparent 1px);
-  background-size: 100px 100px;
-  animation: scroll-down 4s linear infinite;
-}
-
-@keyframes scroll-down {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 100px;
-  }
-}
-
-@keyframes scroll-diagonal {
-  from {
-    background-position: 0 0, 5px 5px; 
-  }
-  to {
-    background-position: -10px 10px, -5px 15px; 
   }
 }
