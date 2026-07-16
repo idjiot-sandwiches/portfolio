@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -9,46 +13,8 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<div id="root">
+		<div id="root" class="antialiased">
 			<slot />
 		</div>
 	</body>
 </html>
-
-<style>
-	html, body {
-        margin: 0;
-        padding: 0;
-    }
-
-	#root {
-		position: relative;
-		isolation: isolate;
-		min-height: 100vh;
-		background-color: #cad5e2 !important;
-		background: 
-			linear-gradient(to right, #FF91A4 1px, transparent 1px), 
-			linear-gradient(to bottom, #FF91A4 1px, transparent 1px),
-			radial-gradient(circle at 0px 0px, #FF91A4 3px, transparent 1px),
-			radial-gradient(circle at 100px 100px, #FF91A4 3px, transparent 1px),
-			radial-gradient(circle at 100px 0px, #FF91A4 3px, transparent 1px),
-			radial-gradient(circle at 0px 100px, #FF91A4 3px, transparent 1px);
-		background-size: 100px 100px;
-		animation: scroll-down 4s linear infinite;
-	}
-
-	#root::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(transparent 50%, #cad5e2 90%);
-		pointer-events: none;
-		opacity: 85%;
-		z-index: -1;
-	}
-
-	@keyframes scroll-down {
-		from { background-position: 0 0; }
-		to { background-position: 0 100px; }
-	}
-</style>
