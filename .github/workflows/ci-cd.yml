@@ -27,7 +27,7 @@ jobs:
       - name: Build image
         run: |
           docker build \
-            -f docker/Dockerfile \
+            -f Dockerfile \
             -t ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/portfolio:latest \
             .
 
