@@ -1,13 +1,18 @@
 ---
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent, CardFooter } from "../ui/card";
 ---
 
 <Card class="order-12 md:col-span-2 lg:col-span-1 row-span-1">
-  <CardContent class="flex justify-center items-center h-full">
-    <div class="h-10 w-10 bg-[#FF91A4]"></div>
-    <div class="h-10 w-10 bg-[#FFD3DA]"></div>
-    <div class="h-10 w-10 bg-[#FFDEE6]"></div>
-    <div class="h-10 w-10 bg-white"></div>
-    <div class="h-10 w-10 bg-[#0a0a0a]"></div>
+  <CardContent>
+    <div class="flex justify-center items-center h-full">
+      <div class="h-10 w-10 bg-[#FF91A4]"></div>
+      <div class="h-10 w-10 bg-[#FFD3DA]"></div>
+      <div class="h-10 w-10 bg-[#FFDEE6]"></div>
+      <div class="h-10 w-10 bg-white"></div>
+      <div class="h-10 w-10 bg-[#0a0a0a]"></div>
+    </div>
   </CardContent>
+  <CardFooter class="justify-center">
+    <p class="text-xs text-muted-foreground text-center">Color palettes</p>
+  </CardFooter>
 </Card>
