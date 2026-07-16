@@ -1,49 +1,19 @@
 ---
-import { Card, CardContent } from "../ui/card";
+import { Time } from "../ui/time";
 import { Separator } from "../ui/separator";
-
-const date = new Date();
-const parseTime = (str: string) => {
-  const time = str.split(':');
-  return {
-    hour: time[0],
-    minute: time[1]
-  }
-};
-
-const myTime = parseTime(date.toLocaleTimeString('en-GB', { timeZone: 'Asia/Jakarta' }));
-const yourTime = parseTime(date.toLocaleTimeString('en-GB'));
+import { Card, CardContent } from "../ui/card";
 ---
 
 <Card class="order-11 row-span-2 lg:order-5">
-  <CardContent class="h-full">
-    <div class="flex justify-between items-center h-11/12">
-      <div class="w-1/2 flex flex-col items-center gap-2 h-full">
-        <p class="uppercase text-[0.6rem] tracking-wide">My Time</p>
-        <div class="flex flex-col items-center h-full gap-2">
-          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
-            {myTime.hour}
-          </h2>
-          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
-            {myTime.minute}
-          </h2>
-        </div>
-      </div>
-      <Separator orientation="vertical" />
-      <div class="w-1/2 flex flex-col items-center gap-2 h-full">
-        <p class="uppercase text-[0.6rem] tracking-wide">Your Time</p>
-        <div class="flex flex-col items-center h-full gap-2">
-          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
-            {yourTime.hour}
-          </h2>
-          <h2 class="scroll-m-20 text-6xl font-semibold tracking-tight transition-colors">
-            {yourTime.minute}
-          </h2>
-        </div>
-      </div>
+  <CardContent class="h-full flex flex-col items-center justify-around">
+    <div>
+      <p class="uppercase text-[0.6rem] tracking-wide text-center">My Time</p>
+      <Time timezone="Asia/Jakarta" client:load />
     </div>
-    <p class="text-[0.6rem] text-muted-foreground text-center pt-2">
-      GMT+7 Asia/Jakarta
-    </p>
+    <Separator />
+    <div>
+      <p class="uppercase text-[0.6rem] tracking-wide text-center">Your Time</p>
+      <Time client:load />
+    </div>
   </CardContent>
 </Card>
