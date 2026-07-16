@@ -1,10 +1,56 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { BackButton } from "@/components/ui/button";
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 ---
 
 <Layout>
-  <main class="mx-auto flex h-screen w-full max-w-4xl flex-1 flex-col gap-4 rounded-xl p-4">
+  <main class="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 rounded-xl p-4">
     <BackButton />
+    <h2 class="scroll-m-20 pt-4 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+      Experiences
+    </h2>
+    <div class="grid gap-4">
+      <Card class="min-h-64">
+        <CardHeader>
+          <CardTitle>
+            IT Division Bina Nusantara
+          </CardTitle>
+          <CardDescription>
+            Programmer Associate Member
+          </CardDescription>
+          <CardAction class="font-semibold">
+            2024 - 2025
+          </CardAction>
+        </CardHeader>
+        <CardContent>
+          <ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+            <li>Built dashboard modules using Laravel, Blade, and MySQL for certificate management system.</li>
+            <li>Implemented QR functionality by encoding document identifiers into URLs and handling server-side validation.</li>
+            <li>Debugged and optimized dynamic Surat Keterangan (SK) templates to fix formatting and data binding issues.</li>
+          </ul>
+        </CardContent>
+      </Card>
+      <Card class="min-h-64">
+        <CardHeader>
+          <CardTitle>
+            PT Evotech Distribusi
+          </CardTitle>
+          <CardDescription>
+            Web Developer Intern
+          </CardDescription>
+          <CardAction class="font-semibold">
+            2025 - 2026
+          </CardAction>
+        </CardHeader>
+        <CardContent>
+          <ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+            <li>Developed REST APIs and integration services using .NET (C#) Framework to synchronize data between internal applications and external financial management system.</li>
+            <li>Integrated RabbitMQ to enable asynchronous processing.</li>
+            <li>Designed and implemented reusable application layout templates using Blazor (Radzen) adopted across multiple internal systems.</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
   </main>
 </Layout>
