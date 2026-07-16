@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Resume from "@/components/grid/Resume.astro";
+import Contact from "@/components/grid/Contact.astro";
+import Project from "@/components/grid/Project.astro";
+import Experience from "@/components/grid/Experience.astro";
+import Certificate from "@/components/grid/Certificate.astro";
+import Copyright from "@/components/grid/Copyright.astro";
+import Current from "@/components/grid/Current.astro";
+import PowerButton from "@/components/grid/PowerButton.astro";
+import Time from "@/components/grid/Time.astro";
+import Summary from "@/components/grid/Summary.astro";
+import Backend from "@/components/grid/Backend.astro";
+import Frontend from "@/components/grid/Frontend.astro";
+import Tools from "@/components/grid/Tools.astro";
+import Color from "@/components/grid/Color.astro";
 ---
 
 <Layout>
-	<!-- <Welcome /> -->
+  <main class="mx-auto flex lg:h-screen w-full max-w-6xl flex-1 flex-col gap-4 rounded-xl">
+    <div class="grid grid-cols-1 auto-rows-25 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-8 lg:auto-rows-auto gap-6 h-full p-4">
+      <Summary />
+      <Backend />
+      <Frontend />
+      <Tools />
+      <Resume />
+      <Time />
+      <Experience />
+      <Contact />
+      <Current />
+      <Project />
+      <PowerButton />
+      <Color />
+      <Copyright />
+      <Certificate />
+    </div>
+  </main>
 </Layout>
