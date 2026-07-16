@@ -1,0 +1,51 @@
+name: Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login Container Registry
+        run: |
+          echo "${{ secrets.REGISTRY_PASSWORD }}" \
+          | docker login git.100.86.124.3.sslip.io \
+          -u "${{ secrets.REGISTRY_USERNAME }}" \
+          --password-stdin
+
+      - name: Set Env Variable
+        run: |
+          echo "IMAGE_OWNER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          echo "REGISTRY=git.100.86.124.3.sslip.io" >> $GITHUB_ENV
+
+      - name: Build image
+        run: |
+          docker build \
+            -f docker/Dockerfile \
+            -t ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/portfolio:latest \
+            .
+
+      - name: Push images
+        run: |
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/portfolio:latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy server
+        run: |
+          mkdir -p /home/idjiot/apps/portfolio
+          cd /home/idjiot/apps/portfolio
+
+          docker compose pull
+          docker compose up -d
+
+          docker image prune -a -f
+          docker builder prune -f
