@@ -1,13 +1,6 @@
 # Stage 1: Build Astro application
 FROM node:22-alpine AS builder
 
-LABEL org.opencontainers.image.source="https://github.com/idjiot-sandwiches/portfolio"
-LABEL org.opencontainers.image.title="Portfolio"
-LABEL org.opencontainers.image.description="Astro portfolio website"
-LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.url="https://github.com/idjiot-sandwiches/portfolio"
-LABEL org.opencontainers.image.vendor="Idjiot Sandwiches"
-
 WORKDIR /app
 
 COPY package*.json ./
@@ -21,6 +14,13 @@ RUN npm run build
 
 # Stage 2: Production runtime
 FROM node:22-alpine AS runtime
+
+LABEL org.opencontainers.image.source="https://github.com/idjiot-sandwiches/portfolio"
+LABEL org.opencontainers.image.title="Portfolio"
+LABEL org.opencontainers.image.description="Astro portfolio website"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.url="https://github.com/idjiot-sandwiches/portfolio"
+LABEL org.opencontainers.image.vendor="Idjiot Sandwiches"
 
 WORKDIR /app
 
