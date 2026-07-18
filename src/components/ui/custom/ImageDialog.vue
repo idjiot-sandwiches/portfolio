@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Image } from "@lucide/vue";
 import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 defineProps<{
   images: string[]
@@ -25,14 +25,16 @@ defineProps<{
         </CardContent>
       </Card>
     </DialogTrigger>
-    <DialogContent class="min-w-4xl">
+    <DialogContent class="md:min-w-2xl lg:min-w-4xl">
+      <DialogTitle class="hidden"></DialogTitle>
+      <DialogDescription class="hidden" aria-describeby="images"></DialogDescription>
       <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-thin py-2">
         <div 
           v-for="(val, idx) in images" 
           :key="idx" 
           class="min-w-full snap-center shrink-0"
         >
-          <img :src="val" alt="" class="w-[52rem] aspect-video object-cover object-left" />
+          <img :src="val" alt="" class="w-[40rem] lg:w-[52rem] aspect-video object-cover object-left" />
         </div>
       </div>
     </DialogContent>
