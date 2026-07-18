@@ -1,4 +1,12 @@
 FROM node:lts AS runtime
+
+LABEL org.opencontainers.image.source="https://github.com/idjiot-sandwiches/portfolio.git"
+LABEL org.opencontainers.image.title="Portfolio"
+LABEL org.opencontainers.image.description="Portfolio image"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.url="https://github.com/idjiot-sandwiches/portfolio.git"
+LABEL org.opencontainers.image.vendor="Idjiot Sandwiches"
+
 WORKDIR /app
 
 COPY . .
