@@ -13,7 +13,7 @@ RUN npm run build
 
 
 # Stage 2: Production runtime
-FROM node:22-alpine AS runtime
+FROM node:24-alpine AS runtime
 
 LABEL org.opencontainers.image.source="https://github.com/idjiot-sandwiches/portfolio"
 LABEL org.opencontainers.image.title="Portfolio"
