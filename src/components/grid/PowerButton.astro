@@ -1,15 +1,22 @@
 ---
-import { TriangleAlert } from "@lucide/astro";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Power } from "@lucide/astro";
+import { Card, CardContent, CardFooter, CardTitle } from "../ui/card";
 ---
 
 <Card class="order-11 row-span-2">
-    <CardHeader>
-        <CardTitle class="text-center">
-            Under Construction
-        </CardTitle>
-    </CardHeader>
-    <CardContent class="flex justify-center">
-        <TriangleAlert size="100" class="text-yellow-500" />
-    </CardContent>
+  <CardContent class="flex justify-center items-center">
+    <a href="https://pc.idjiot-sandwiches.my.id/"
+      class="relative w-32 h-32 rounded-full flex justify-center items-center
+        bg-linear-to-br from-slate-400 to-black
+        shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-2px_4px_rgba(0,0,0,0.15),2px_4px_8px_rgba(225,29,72,0.75)]
+        transition-all duration-200 ease-out
+        hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.2),2px_4px_8px_rgba(225,29,72,0.5)]
+        active:scale-[0.97] active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.25),0_2px_6px_rgba(225,29,72,0.2)]"
+    >
+      <Power size={56} class="text-[#FF91A4] animate-pulse" />
+    </a>
+  </CardContent>
+  <CardFooter class="justify-center">
+    <CardTitle>Turn On Computer</CardTitle>
+  </CardFooter>
 </Card>
